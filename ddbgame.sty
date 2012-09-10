@@ -5,7 +5,7 @@
 \RequirePackage{calc}
 
 \newcommand{\punctuategame}[2]{%
-  \setbox0 = \hbox{#1}% box containing the whole game
+  \setbox0=\hbox{#1}% box containing the whole game
   \setbox1=\hbox{I}% box used to determined the height of text in a cell
   \newlength{\vdisp}% vertical displacement of punctuation
   \setlength{\vdisp}{-\dp0 - \arrayrulewidth + \gamestretch \baselineskip / 2 - \ht1 / 2}%
