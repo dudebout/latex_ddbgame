@@ -1,7 +1,15 @@
 \ProvidesPackage{ddbgame}
 
-\RequirePackage{color}
+\DeclareOption{beamer}{
+  \AtBeginDocument{
+    \def\sgtextcolor{normal text.fg}
+    \def\sglinecolor{normal text.fg}
+  }
+}
+\ProcessOptions
+
 \RequirePackage{sgamevar}
+\RequirePackage{color}
 \RequirePackage{calc}
 \gamemathtrue
 
