@@ -13,12 +13,13 @@
 \RequirePackage{calc}
 \gamemathtrue
 
+\newlength{\g@meVdisp}% vertical displacement of punctuation
+\newlength{\g@meHdisp}% horizontal displacement of punctuation
+
 \newcommand{\punctuategame}[2]{%
   \setbox0=\hbox{#1}% box containing the whole game
   \setbox1=\hbox{I}% box used to determined the height of text in a cell
-  \newlength{\vdisp}% vertical displacement of punctuation
-  \setlength{\vdisp}{-\dp0 - \arrayrulewidth + \gamestretch \baselineskip / 2 - \ht1 / 2}%
-  \newlength{\hdisp}% horizontal displacement of punctuation
-  \setlength{\hdisp}{\arrayrulewidth / 2}%
+  \setlength{\g@meVdisp}{-\dp0 - \arrayrulewidth + \gamestretch \baselineskip / 2 - \ht1 / 2}%
+  \setlength{\g@meHdisp}{\arrayrulewidth / 2}%
   \mbox{#1}% placing the game
-  \raisebox{\vdisp}{\hspace{\hdisp}\mbox{#2}}}% placing punctuation
+  \raisebox{\g@meVdisp}{\hspace{\g@meHdisp}\mbox{#2}}}% placing punctuation
